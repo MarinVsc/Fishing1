@@ -1,0 +1,224 @@
+/* General reset and basic styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: url('background-image.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+}
+
+header {
+    background-color: rgba(51, 51, 51, 0.8);
+    padding: 1em 0;
+    text-align: center;
+    position: relative;
+}
+
+.icon-menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px;
+}
+
+.icon-menu img {
+    width: 30px;
+    cursor: pointer;
+}
+
+.icon-dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(51, 51, 51, 0.8);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    z-index: 1;
+}
+
+.icon-menu:hover .icon-dropdown-menu {
+    display: block;
+}
+
+nav {
+    text-align: center;
+    margin-top: 1em;
+}
+
+.main-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.main-menu li {
+    position: relative;
+}
+
+.main-menu a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 1em 2em;
+    background-color: rgba(51, 51, 51, 0.8); /* Background for menu items */
+    transition: background-color 0.3s ease;
+}
+
+.main-menu a:hover {
+    background-color: rgba(85, 85, 85, 0.8);
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: rgba(51, 51, 51, 0.8);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    top: 100%;
+    left: 0;
+    z-index: 1; /* Ensure dropdowns appear above other content */
+}
+
+.dropdown-menu li {
+    width: 200px;
+}
+
+.dropdown-menu a {
+    padding: 0.5em 1em;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* Main content styles */
+main {
+    padding: 2em;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.6);
+    margin: 2em auto;
+    width: 80%;
+    border-radius: 10px;
+}
+
+.product-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 2em;
+}
+
+.product-item {
+    position: relative;
+    width: 200px; /* Adjust width of each product item */
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.product-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px; /* Rounded corners for image */
+}
+
+}
+
+.product-item:hover img {
+    transform: scale(1.05); /* Scale up image on hover */
+}
+
+.product-caption {
+    padding: 1em;
+    text-align: center;
+}
+
+.product-caption p {
+    font-size: 1em;
+    color: yellow; /* Yellow text color */
+    text-decoration: none; /* No underline */
+}
+
+.hover-image {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.hover-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.hover-image .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.3s ease;
+}
+
+.hover-image:hover .overlay {
+    opacity: 1;
+}
+
+.hover-image .overlay p {
+    text-align: center;
+    padding: 0 20px;
+}
+
+.hover-list {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0 0;
+}
+
+.hover-list li {
+    margin: 5px 0;
+}
+
+.hover-list a {
+    color: yellow;
+    text-decoration: none;
+    font-size: 1em;
+}
+
+.hover-list a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media only screen and (max-width: 768px) {
+    .product-item {
+        width: calc(50% - 20px); /* Adjust for 2 columns with gap */
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .product-item {
+        width: 100%; /* Full width for single column */
+    }
+}
